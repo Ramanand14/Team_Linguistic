@@ -1,7 +1,3 @@
-# main.py / Idiom Corpus
-# Gourav Siddhad
-# 07-04-2018
-
 import idiomcorpus
 from mtranslate import translate
 from tkinter import *
