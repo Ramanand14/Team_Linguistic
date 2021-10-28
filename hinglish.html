@@ -1,0 +1,391 @@
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>hinglish</title>
+        
+        <style type=text/CSS>
+        
+/* Form design */
+.form-inline {  
+ 
+  flex-flow: column wrap;
+  align-items: center;
+  
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+  
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/*Design for Radio button*/
+/* The container */
+.container {
+  
+  position: relative;
+  
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 7px;
+	left: 7px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: white;
+}
+
+
+/*Drop DownMenu */
+.container {
+        
+        display:inline-block;
+        cursor: pointer;
+        margin: 2px;
+        
+    }
+a.two:link {color:lightblue;}
+a.two:visited {color:whitesmoke}
+a.two:hover {font-size:150%;}
+
+    
+    .bar1, .bar2, .bar3 {
+        width: 40px;
+        height: 6px;
+        background-color:white;
+        margin: 4px 0;
+        transition: 0.4s;
+        
+    }
+    
+    /* Rotate first bar */
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+        transform: rotate(-45deg) translate(-9px, 6px) ;
+    }
+    
+    /* Fade out the second bar */
+    .change .bar2 {
+        opacity: 0;
+    }
+    
+    /* Rotate last bar */
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+        transform: rotate(45deg) translate(-8px, -8px) ;
+    }
+    /*Footer Design*/
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  text-decoration: none;
+}
+footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #111;
+}
+footer .content{
+  max-width: 1350px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .content p,a{
+  color: #fff;
+}
+footer .content .box{
+  width: 33%;
+  transition: all 0.4s ease;
+}
+footer .content .topic{
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+
+}
+footer .content p{
+  text-align: justify;
+}
+footer .content .lower .topic{
+  margin: 24px 0 5px 0;
+}
+footer .content .lower i{
+  padding-right: 16px;
+}
+footer .content .middle{
+  padding-left: 80px;
+}
+footer .content .middle a{
+  line-height: 32px;
+}
+footer .content .right input[type="text"]{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #d9d9d9;
+  background: #000;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 2px solid #222222;
+}
+footer .content .right input[type="submit"]{
+  height: 42px;
+  width: 100%;
+  font-size: 18px;
+  color: #d9d9d9;
+  background: #eb2f06;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 12px;
+  border: 2px solid #eb2f06;
+  transition: all 0.3s ease-in-out;
+}
+.content .right input[type="submit"]:hover{
+  background: none;
+  color:  #eb2f06;
+}
+footer .content .media-icons a{
+  font-size: 16px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 5px;
+  border: 2px solid #222222;
+  margin: 30px 5px 0 0;
+  transition: all 0.3s ease;
+}
+.content .media-icons a:hover{
+  border-color: #eb2f06;
+}
+footer .bottom{
+  width: 100%;
+  text-align: right;
+  color: #d9d9d9;
+  padding: 0 40px 5px 0;
+}
+footer .bottom a{
+  color: #eb2f06;
+}
+footer a{
+  transition: all 0.3s ease;
+}
+footer a:hover{
+  color: #eb2f06;
+}
+@media (max-width:1100px) {
+  footer .content .middle{
+    padding-left: 50px;
+  }
+}
+@media (max-width:950px){
+  footer .content .box{
+    width: 50%;
+  }
+  .content .right{
+    margin-top: 40px;
+  }
+}
+@media (max-width:560px){
+  footer{
+    position: relative;
+  }
+  footer .content .box{
+    width: 100%;
+    margin-top: 30px;
+  }
+  footer .content .middle{
+    padding-left: 0;
+  }
+}
+    
+        </style>
+        <!--<title> Responsive Footer | CodingLab</title>--->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+    
+    <body bgcolor="lightgrey" style="margin: 8px;">
+      <script>
+        function myFunction(x) {
+      x.classList.toggle("change");
+      
+      document.getElementById('myDropdown').style.display = document.getElementById('myDropdown').style.display =='block' ?   'none' : 'block';
+  }
+      </script>
+        <h1 style="font-size:50px; color:white;background-color: black; font-family:sans-serif;align-items: inherit;">
+          <div class="container" onclick="myFunction(this)">
+             <div class="bar1"></div>
+             <div class="bar2"></div>
+             <div class="bar3"></div>
+    
+                 <div id="myDropdown" class="dropdown-content">
+                   <a class="two" href="#" style="font-size: 20;">Login</a><br><br>
+                   <a class="two" href="#" style="font-size: 20;">Virtual Keyboard</a><br>
+                  
+                 </div>
+             </div> Linguistic</h1>
+        
+        
+        <form align="right" class="form-inline">
+            <br><br>
+            
+            <label class="container"  style="font-size: 20px;">File Input
+              <input type="radio"  name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container" style="font-size: 20px;">Voice        
+              <input type="radio" checked="checked" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container" style="font-size: 20px;">Keyboard        
+              <input type="radio" checked="checked" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <br><br>
+            <input type="text" id="hinglish" name="hinglish"  style="height:130px; width:500px;box-sizing: border-box;border: 3px solid black;-webkit-transition: 0.5s;transition: 0.5s; outline: none;" placeholder="Enter Hinglish Text"><br><br>
+            
+            <input type="text" id="english" name="english" style="height:130px; width:500px; box-sizing:border-box;border: 3px solid black;-webkit-transition: 0.5s;transition: 0.5s; outline: none;"  placeholder="Text In English"><br><br>
+            
+            <button type="submit" >Submit</button>
+            
+        </form>
+        <footer>
+          <div class="content">
+            <div class="left box">
+              <div class="upper">
+                <div class="topic">About us</div>
+                <p>Our application takes Hinglish text as input from the
+                  user and translates it into complete English language. It
+                  can also replace all the short notations present in the
+                  text with their long notations. We have also given a
+                  voice feature to our text box which will allow users to
+                  listen to the text.</p>
+              </div>
+              <div class="lower">
+                <div class="topic">Contact us</div>
+                <div class="phone">
+                  <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+                </div>
+                <div class="email">
+                  <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="right box">
+              <div class="topic">Subscribe us</div>
+              <form action="#">
+                <input type="text" placeholder="Enter email address">
+                <input type="submit" name="" value="Send">
+                <div class="media-icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="bottom">
+            <p>Copyright © 2021 <a href="#">Team Linguistic</a> All rights reserved</p>
+          </div>
+        </footer>
+    </body>
+</html>
