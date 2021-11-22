@@ -3,8 +3,6 @@
     <title>Virtual Keyboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="/assets/favicon.ico">
-    <link rel="stylesheet" href="/assets/dcode.css">
     <link rel="stylesheet" href="keyboard_Aditi.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -12,16 +10,29 @@
 <body>
     
     <center>
-  <textarea class="use-keyboard-input"  rows = '5' cols='50' placeholder="Enter Hinglish Text"></textarea>
+  <textarea class="divide" rows = '5' cols='50' placeholder="Enter Hinglish Text" id="text1"></textarea>
+  <textarea class="use-keyboard-input" rows = '5' cols='50' placeholder="Enter Hinglish Text" id="text2"></textarea>
   <br><br>
   
   <textarea   rows='7' cols='50'  placeholder=" Text is" disabled> </textarea>
 </center>
     <center>
-  <button class="use-keyboard-input"> Use Keyboard</button> 
+      
+
+    
+  <button class="use-keyboard-input"  onclick="callme()" id='demo'> Use Keyboard </button> 
 </center>
 
 
-  <script src="keyboard_Aditi.js"></script>
+<script src="keyboard_Aditi.js"></script>
+  <script>
+    document.getElementById("text2").style.display = 'none';
+    document.getElementById("text1").style.display = 'block';
+    function callme(){
+      document.getElementById("text1").style.display = 'none';
+      document.getElementById("text2").style.display = 'block';
+    }
+  </script>
+
   
 </body>
