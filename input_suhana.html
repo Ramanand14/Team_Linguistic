@@ -1,0 +1,31 @@
+<html>
+<body bgcolor='#E8BEAC'>
+<br><br><br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form action="{{url_for('submit')}}" method="POST">
+
+<center><textarea rows='10' cols='70'  id='Speechtotext' name="result">{{transcript}} </textarea></center><br>
+<center><i class="fa fa-microphone"  style="font-size:28px;color:black" name='mic' value='mic'  >&nbsp;
+
+<button class='file submit'  name='button' value='button' style="font-size:30px;background-color:#E8BEAC"
+onClick="alert(' Are you sure to turn micrphone on');" data-inline='true' data-theme='b'  data-role='button' ><a href='output'>On Recording</a></button></i>
+
+<input type='submit' value='Play' data-inline='true' data-theme='b'  data-role='button' style="font-size:30px;background-color:#E8BEAC"><br><br><br>
+
+</form>
+<form action="{{url_for('sub')}}" method="POST">
+<center><textarea rows='10' cols='70' name="Eng" >{{transcript1}}</textarea></center><br><br>
+<input type='submit' data-inline='true' data-theme='b'  data-role='button' style="font-size:30px;background-color:#E8BEAC">
+<br><br><br>
+</form>
+<script>
+
+</script>
+</div>
+</body>
+</html>
+
+
+
+
+
