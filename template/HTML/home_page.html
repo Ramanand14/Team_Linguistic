@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home Page</title>
+		<!--<link rel="stylesheet" href="../../static/CSS/style1.css">-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='../static/CSS/style1.css')}}">
+		<style>
+			.Log_out{
+				font-size: 15px;
+				margin-top: 20px;
+				margin-right: 15px;
+				padding: 10px 10px;
+				border-radius: 16px;
+				border: 1px solid #D4D3E8;
+				text-transform: uppercase;
+				font-weight: 700;
+				width: 30%;
+				background-color:white;
+				color:#4C489D;
+				box-shadow: 0px 2px 2px #5C5696;
+				cursor: pointer; 
+				transition: .2s;
+				float:right;
+			} 		
+		</style>
+	</head>
+
+	<body>
+        
+		<div class="container">
+			<div class="screen">
+				<div class="screen__content">
+	
+					<a href="admin_page"><button class="button Log_out"> Log Out</button></a>
+					
+				
+					<form class="login">
+						<div class="login__field">
+							<i class="login__icon fas fa-user"></i>
+							
+							<input type="text" class="login__input" placeholder="Enter short notation">
+						</div>
+	
+						<div class="login__field">
+							<i class="login__icon fas fa-user"></i>
+							<input type="text" class="login__input" placeholder="Enter Long Form">
+						</div>
+	
+						<div class="login__field">
+							<i class="login__icon fas fa-lock"></i>
+							<input type="password" class="login__input" placeholder="Password">
+						</div>
+						<button class="button login__submit">
+							<span class="button__text">Commit</span>
+							<i class="button__icon fas fa-chevron-right"></i>
+						</button>				
+					</form>
+				</div>
+				<div class="screen__background">
+					<span class="screen__background__shape screen__background__shape4"></span>
+					<span class="screen__background__shape screen__background__shape3"></span>		
+					<span class="screen__background__shape screen__background__shape2"></span>
+					<span class="screen__background__shape screen__background__shape1"></span>
+				</div>		
+			</div>
+		</div>
+	</body>
+</html>
