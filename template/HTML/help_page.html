@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<!--html code start here-->
+<html lang="en">
+    <!--head tag start-->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linguistic | Help</title>
+
+        <!--link for CSS code-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='../static/CSS/style3.css')}}">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    </head>
+    <!--head tag end-->
+    
+    <!--body tag start-->
+    <body bgcolor="#EEE2DC">
+        <!--page logo design-->
+        <nav id="navbar">
+            <ul>
+                <li class="logo"><h1 style=" color: rgb(238, 9, 85); font-size: 60px;">Linguistic</h1></li>
+            </ul>
+        </nav>
+
+        <!--option panel tag-->
+        <div class="help">
+            <br>
+            <p><b><a href="#account">Virtual Keyboard</a></b></p> <br><br>
+            <p><b><a href="#wishlist">File Input</a></b></p><br><br>
+            <p><b><a href="#cart">Voice Input</a></b></p><br><br>
+        </div>	
+
+        <!--virtual keyboard related questions-->
+        <div class="acnt" name="virtual-keyboard">Virtual Keyboard</div>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-item-header" >
+                    When to use virtual keyboard?
+                </div>
+
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+					    When your physical keyboard is not working then you can use virtual keyboard.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--file input related questions-->
+        <div class="acnt" id="file-input" name="file-input">File Input</div>    
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-item-header" >
+                    How to select and submit file from your device?
+                </div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        Click on select file button and select file from your device and click on submit and your will be submitted.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-item-header">
+                    Which file format is supported?   
+                </div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        Only text(.txt) format is supported.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--voice input related questions-->
+        <div class="acnt" id="voice-input" name="voice-input">Voice Input</div>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-item-header" >
+                    How to give voice input?   
+                </div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        Click on mike symbol and record your voice ,after voice record you can click on submit buttonto submityour voice.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-item-header">
+                    Can we able to hear output in voice?   
+                </div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        Yes..You can click on speaker symbol which is at the bottom of the output textbox to hear your output in voice.
+                    </div>
+                </div>
+            </div>         
+        </div>
+
+        <br><br>
+        <!--footer tag start-->
+        <footer class="footer">
+            <hr> <hr> <br> <br>
+        </footer>    
+        <!--footer tag end-->
+        
+        <!--JS code start here-->
+        <script  type="text/javascript">
+            const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+            accordionItemHeaders.forEach(accordionItemHeader => {
+                accordionItemHeader.addEventListener("click", event => {
+                    accordionItemHeader.classList.toggle("active");
+                    const accordionItemBody = accordionItemHeader.nextElementSibling;
+                    if(accordionItemHeader.classList.contains("active")) {
+                        accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+                    }
+                    else {
+                        accordionItemBody.style.maxHeight = 0;
+                    }
+                });
+            });
+        </script>
+        <!--JS code end here-->
+    </body>
+    <!--body tag end-->
+</html>
+<!--html code end here-->

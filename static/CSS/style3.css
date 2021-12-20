@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/** body tag CSS starts **/
+body{
+    overflow-x: hidden;
+    padding-top: 90px;
+    font-family: 'Open sans',sans-serif;
+    margin: 0 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+/** body tag CSS ends **/
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --color:white;
+    --navbar-height: 59px;
+}
+
+/** navbar CSS starts **/
+#navbar{   
+    display: flex; 
+    position: fixed;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    background: black;
+}
+
+.logo{
+    display: flex;
+    position: fixed;
+    justify-content: flex-start;
+    flex-direction: row;
+    top: 2%;
+    left: 0;
+}
+
+#navbar ul{
+    display: flex;
+    font-family: 'Open sans',sans-serif;
+    font-weight: bold;   
+}
+
+#navbar ul li{ 
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    align-items: center;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+/** navbar CSS ends **/
+
+.help{
+	position:fixed;
+	background-color:black;
+	top:172px;
+    left:24px;
+	width:298px;
+	height:270px;
+	padding:22px;
+	border-radius:1rem;
+}
+
+a{
+	text-decoration:none;
+	font-size:18px;
+	color:white;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+.acnt {
+    text-align:center;
+	font-size:22px;
+    color:black;
+	font-weight:bold;
+	margin: 5rem 0 -1rem -2rem;
+}
+
+.acnt a{
+	text-decoration:none;
+	font-size:22px;
+	color:black;
+}
+
+/** wishlist CSS starts **/
+#virtual-keyboard{
+	 text-align:center;
+	font-size:22px;
+    color:black;
+	font-weight:bold;
+	margin: 4rem 0 -1rem -8rem;
+}
+/** wishlist CSS ends **/
+
+/** cart CSS start **/
+#file-input{
+	text-align:center;
+	font-size:22px;
+    color:black;
+	font-weight:bold;
+	margin: 4rem 0 -1rem -7rem;
+}
+/** cart CSS ends **/
+
+#voice-input{
+	text-align:center;
+	font-size:22px;
+    color:black;
+	font-weight:bold;
+	margin: 4rem 0 -1rem -6rem;
+}
+
+#other{
+	text-align:center;
+	font-size:22px;
+    color:black;
+	font-weight:bold;
+	margin: 4rem 0 -1rem -9rem;
+}
+
+/** accordion content CSS starts**/
+.accordion {
+  width: 90%;
+  max-width: 666px;
+  margin: 2rem 26rem;
+}
+
+.accordion-item {
+  background-color: #fff;
+  color: #111;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+}
+
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+.accordion1 {
+  width: 90%;
+  max-width: 768px;
+  margin: 2rem .3rem;
+}
+
+.accordion-item1 {
+  background-color: #fff;
+  color: #111;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+}
+
+.accordion-item-header1 {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-item-header1::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.accordion-item-header1.active::after {
+  content: "\2212";
+}
+/** accordion content CSS ends **/
+
+/** responsive page CSS starts **/
+@media(max-width:767px) {
+  html {
+      font-size: 14px;
+  }
+}
+/** responsive page CSS end **/
+
+/** footer tag CSS starts **/
+footer{
+	position:absolute;
+	margin-left:444px;
+	text-align:center;
+}
+/** footer tag CSS ends **/

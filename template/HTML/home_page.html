@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<!--html code start here-->
+<html>
+	<!--head tag start-->
+    <head>
+		<title>Linguistic | Home Page</title>
+
+		<!--link for CSS code-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='../static/CSS/style1.css')}}">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+	<!--head tag end-->
+
+	<!--body tag start-->
+    <body>
+		<!--header tag start-->
+	    <header>
+			<!--option panel design-->
+      		<div class="menu_bar">
+        		<ul>
+          			<li class="active"><a href="#">Option</a>
+            			<div class="sub-menu">
+							<ul>
+								<li>
+									<a class="use-keyboard-input" href="javascript:virtual();">Virtual Keyboard</a>
+								</li>
+							
+							</ul>
+						</div>
+					</li>
+					
+					<li class="linguistic">Linguistic</li>
+				</ul>
+			</div>
+		</header>
+		<!--header tag end-->
+
+		<!--quote design code-->
+		<div class="quote">
+			<span class="colon">&ldquo;</span><b class="firstlet">The</b> Limits of our Language are the Limits of our world<span class="colon">&rdquo;</span>
+		</div>
+
+		<!--form tag start-->
+		<form action="{{url_for('radio_check')}}" class="form-inline" method="post" enctype = "multipart/form-data">
+			<!--radio button design-->
+			<div class="radio_btns">
+				<label class="container1" style="font-size: 20px;">
+					<input type="radio" name="radiobtn" id = "keyboard_ip" value="1" onclick="demo1()">Keyboard
+					<span class="checkmark"></span>
+				</label>
+				
+				<label class="container1" style="font-size: 20px;">       
+					<input type="radio" name="radiobtn" id = "voice_ip" value="2" onclick="demo1()">Voice 
+					<span class="checkmark"></span>
+				</label>
+				
+				<label class="container1" style="font-size: 20px;">       
+					<input type="radio" name="radiobtn" id = "file_ip" value="3" onclick="demo1()">File Input 
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		
+			<br><br>
+			
+			<!--keyboard input design-->
+			<textarea type="text" class="hinglish" id = "hinglish" name="hinglish" placeholder="Enter Hinglish Text" disabled></textarea>
+			
+			<!--virtual-keyboard input design-->
+			<textarea type="text" class="use-keyboard-input" placeholder="Enter Hinglish Text" name="vir_text" id="text2"></textarea>
+			
+			<!--audio-play button design-->
+			<a href="#" id="convert1" class="fa" onclick="read_me1()" style="font-size:24px;">&#xf028;</a>
+
+			<!--voice input design-->
+			<textarea type="text" id="write" class="voice_ip" name="text3"></textarea>
+			<i class="fa fa-microphone btn btn-danger" id="microphone" aria-hidden="true" style="font-size:24px;" onclick="startConverting()"></i>
+			
+			<!--file input design-->
+			<div class="file-input" id="file_insertion">
+				<input type="file" id="file" class="file" name="myfile" accept=".txt">
+				<label for="file">
+					Select file
+					<p class="file-name"></p>
+				</label>
+			</div>
+			<br><br><br><br>
+
+			<!--keyboard & file output design-->
+			<textarea type="text" class="english" id = "english" name="english" placeholder="Text In English" disabled>{{ etext }}</textarea>
+			
+			<!--audio-play button design-->
+			<a href="#" id="convert2" class="fa" onclick="read_me2()" style="font-size:24px;">&#xf028;</a>
+			<br><br>      
+			
+			<!--buttons code-->
+			<div class="Buttons">
+				<a href="radio_check"><button type="submit"><div>Submit</div></button></a>
+				<button id="clear" type="clear">Reset</button>
+				<button id="downloadlink" download="info.txt">Download</button>
+			</div>
+			
+		</form>
+		<!--form tag end-->
+		<br><br><br>
+		
+		<!--footer tag start-->
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="footer-col">
+						<h4>About us</h4>
+						<ul>
+							<li>
+							<a href="about-page">Our mission</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="footer-col">
+						<h4>Help</h4>
+						<ul>
+						<li>
+							<a href="help_page">FAQ</a>
+						</li>
+						</ul>
+					</div>
+
+					<div class="footer-col">
+						<h4>Connect with Us</h4>
+						<div class="social-links">
+							<a href="#"><i class="fab fa-facebook-square"></i></a>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a href="#"><i class="fab fa-linkedin-in"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--footer tag end-->
+		
+		<!--JS code start here-->
+		<script src="../../static/JS/script1.js"></script>
+
+		<!--download file code-->
+		<script type='text/javascript'>
+			function download(filename, text) {
+				var element = document.createElement('a');
+				element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+				element.setAttribute('download', filename);
+				element.style.display = 'none';
+				document.body.appendChild(element);
+				element.click();
+				document.body.removeChild(element);
+			}
+
+			// Start file download.
+			document.getElementById("downloadlink").addEventListener("click", function(){
+				// Generate download of Result.txt file with some content
+				var text = document.getElementById("english").value;
+				var filename = "Result.txt";
+				download(filename, text);
+			}, false);
+		</script>
+
+		<!--voice output code-->
+		<script type='text/javascript'>
+			var convert,
+			speech,
+			count = 1;
+			function read_me1(){
+				convert = document.getElementById('convert1'),
+				speech,
+				count = 1;
+
+				if(document.getElementById('keyboard_ip').checked){
+					/*text input from keyboard*/
+					speech  = document.getElementById('hinglish');
+					console.log(speech);
+				}else{
+					/*text input from virtual-keyboard*/
+					speech  = document.getElementById('text2');
+					console.log(speech);
+				}
+				audio_play();
+			}
+
+			function read_me2(){
+				convert = document.getElementById('convert2'),
+				speech  = document.getElementById('english'),
+				count = 1;
+				console.log(speech);
+				audio_play();
+			}	
+
+			function audio_play(){
+				speech.addEventListener('change',function(){
+					speechText = this.value;
+					speechSynthesis.cancel();
+					convert.innerHTML = "&#xf028;";
+				});
+
+				convert.addEventListener('click',function(){
+					if(!speechSynthesis.speaking || speechSynthesis.pause()){
+						speechText = speech.value;
+						var speechVoice = new SpeechSynthesisUtterance();
+						var voices = speechSynthesis.getVoices();
+						speechVoice.voice = voices[2];
+						speechVoice.text = speechText;
+						speechVoice.lang = 'en-US';
+						speechSynthesis.speak(speechVoice);  
+					}
+
+					if(count == 1){
+						convert.innerHTML = "&#xf04b;";
+						speechSynthesis.resume()
+						setTimeout(() => {
+							count = 2;
+						}, 300);
+					
+					}else{
+						speechSynthesis.paused
+						convert.innerHTML = "&#xf04c;";
+						count = 1;
+					}
+
+					setInterval(() => {
+						if(!speechSynthesis.speaking && count == 2){
+							convert.innerHTML = "&#xf028;";
+							count = 1;
+							console.log(count);
+						}
+					},100);	
+				})
+			}
+		</script>
+
+		<!--radion button onclick code-->
+		<script type='text/javascript'>
+			/*invisible all other tag*/
+			document.getElementById('hinglish').style.display = "none";
+			document.getElementById('file_insertion').style.display = "none";
+			document.getElementById("text2").style.display = "none";
+			document.getElementById('convert1').style.display = "none";
+			document.getElementById('microphone').style.display = "none";
+			document.getElementById('write').style.display = "none";
+
+			function demo1(){
+				Keyboard.close();
+				if(document.getElementById('keyboard_ip').checked) {
+					/*clear the value of textarea*/
+					document.querySelector('#hinglish').value = '';
+					document.querySelector('#text2').value = '';
+					document.querySelector('#write').innerHTML = '';
+					document.querySelector('#english').value = '';
+
+					/*hide virtual keyboard design*/
+					document.getElementById("text2").style.display = 'none';
+					document.getElementById('text2').disabled = true;
+					/*unable input box*/
+					document.getElementById('hinglish').disabled = false;
+					/*show keyboard textarea design*/
+					document.getElementById('hinglish').style.display = "block";
+					/*hide file input design*/
+					document.getElementById('file_insertion').style.display = "none";
+					/*show play button emoji*/
+					document.getElementById('convert1').style.display = "block";
+					/*hide microphone emoji*/
+					document.getElementById('microphone').style.display = "none";
+					/*hide voice textarea design*/
+					document.getElementById('write').style.display = "none";
+				}else if(document.getElementById('voice_ip').checked) {
+					/*clear the value of textarea*/
+					document.querySelector('#hinglish').value = '';
+					document.querySelector('#text2').value = '';
+					document.querySelector('#write').innerHTML = '';
+					document.querySelector('#english').value = '';
+
+					/*hide virtual keyboard design*/
+					document.getElementById("text2").style.display = 'none';
+					document.getElementById('text2').disabled = true;
+					/*disable input box*/
+					document.getElementById('hinglish').disabled = true;
+					/*hide keyboard textarea*/
+					document.getElementById('hinglish').style.display = "none";
+					/*hide file input design*/
+					document.getElementById('file_insertion').style.display = "none";
+					/*hide play button emoji*/
+					document.getElementById('convert1').style.display = "none";
+					/*show microphone emoji*/
+					document.getElementById('microphone').style.display = "block";
+					/*show voice textarea design*/
+					document.getElementById('write').style.display = "block";
+				}else{
+					/*clear the value of textarea*/
+					document.querySelector('#hinglish').value = '';
+					document.querySelector('#text2').value = '';
+					document.querySelector('#write').innerHTML = '';
+					document.querySelector('#english').value = '';
+
+					/*hide virtual keyboard design*/
+					document.getElementById("text2").style.display = 'none';
+					document.getElementById('text2').disabled = true;
+					/*disable input box*/
+					document.getElementById('hinglish').disabled = true;
+					/*hide keyboard textarea*/
+					document.getElementById('hinglish').style.display = "none";
+					/*show file input design*/
+					document.getElementById('file_insertion').style.display = "block";
+					/*hide play button emoji*/
+					document.getElementById('convert1').style.display = "none";
+					/*hide microphone emoji*/
+					document.getElementById('microphone').style.display = "none";
+					/*hide voice textarea design*/
+					document.getElementById('write').style.display = "none";
+				}
+			}
+
+			function virtual(){
+				/*uncheck the radio buttons if checked*/
+				document.getElementById('keyboard_ip').checked = false;
+				document.getElementById('voice_ip').checked = false;
+				document.getElementById('file_ip').checked = false;
+
+				/*clear the value of textarea*/
+				document.querySelector('#hinglish').value = '';
+				document.querySelector('#text2').value = '';
+				document.querySelector('#write').innerHTML = '';
+				document.querySelector('#english').value = '';
+				
+				/*show virtual keyboard design*/
+				document.getElementById("text2").style.display = 'block';
+				document.getElementById('text2').disabled = false;
+				/*disable input box*/
+				document.getElementById('hinglish').disabled = true;
+				/*hide keyboard textarea*/
+				document.getElementById("hinglish").style.display = 'none';
+				/*hide file input design*/
+				document.getElementById('file_insertion').style.display = "none";
+				/*hide play button emoji*/
+				document.getElementById('write').style.display = "none";
+				/*show play button emoji*/
+				document.getElementById('convert1').style.display = "block";
+				/*hide microphone emoji*/
+				document.getElementById('microphone').style.display = "none";
+				/*hide voice textarea design*/
+				document.getElementById('write').style.display = "none";
+			}
+
+			var result = document.getElementById('write');
+  
+			/*voice input code*/
+  			function startConverting () {
+				if('webkitSpeechRecognition' in window) {
+					var speechRecognizer = new webkitSpeechRecognition();
+      				speechRecognizer.continuous = true;
+      				speechRecognizer.interimResults = true;
+      				speechRecognizer.lang = 'en-US';
+      				speechRecognizer.start();
+
+      				var finalTranscripts = '';
+
+      				speechRecognizer.onresult = function(event) {
+          				var interimTranscripts = '';
+          				for(var i = event.resultIndex; i < event.results.length; i++){
+              				var transcript = event.results[i][0].transcript;
+              				transcript.replace("\n", "<br>");
+              				if(event.results[i].isFinal) {
+                  				finalTranscripts += transcript;
+              				}else{
+                  				interimTranscripts += transcript;
+              				}
+          				}
+          				result.innerHTML = finalTranscripts + interimTranscripts;
+      				};
+      				speechRecognizer.onerror = function (event) {
+				    };
+  				}else {
+      				result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+  				}	
+  			}
+
+			/*clear button code*/
+			var clear = document.querySelector('#clear');
+			clear.addEventListener('click', function () {
+				document.querySelector('#hinglish').value = '';
+				document.querySelector('#text2').value = '';
+				document.querySelector('#write').innerHTML = '';
+				document.querySelector('#english').value = '';
+			}, false);
+		</script>
+		<!--JS code end here-->
+	</body>
+	<!--body tag end-->
+</html>
+<!--html code end here-->

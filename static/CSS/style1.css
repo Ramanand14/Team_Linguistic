@@ -1,0 +1,699 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+    background-color: #ffffcc;
+}
+
+:root{
+    --navbar-height: 59px;
+}
+
+/** header tag CSS starts **/
+header{
+	position: relative;
+	height: 80px;
+	background-color: black;
+	margin: 0;
+	color: #e6ffcc;
+	font-size: 20px;		
+}
+
+.menu_bar{
+	background-color: #000;
+	
+}
+
+.menu_bar ul{
+	display: inline-flex;
+	list-style: none;
+	color: #fff;
+}
+
+.menu_bar ul li{
+	width: 120px;
+	margin: 15px;
+	padding: 15px;
+}
+
+.menu_bar ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.active{
+	margin-left: 12px;
+	height: 22px;
+}
+
+.active, .menu_bar ul active.li:hover{
+	background-color: dimgray;
+	border-radius: 3px;
+}
+
+.menu_bar .fa{
+	margin-right: 8px;
+}
+
+.sub-menu{
+	display: none;
+}
+
+.menu_bar ul li:hover .sub-menu{
+	display: block;
+	position: absolute;
+	background-color: #000;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.menu_bar ul li:hover .sub-menu ul{
+	display: block;
+	margin: 10px;
+}
+
+.menu_bar ul li:hover .sub-menu ul li{
+	width: 150px;
+	padding: 10px;
+	border-bottom: 1px dotted #fff;
+	background: transparent;
+	border-radius: 0;
+	text-align: left;
+}
+
+.menu_bar ul li:hover .sub-menu ul li:last-child{
+	border-bottom: none;
+}
+
+.menu_bar ul li:hover .sub-menu ul li a:hover{
+	color: cadetblue;
+}
+/** header tag CSS end **/
+
+/** p tag CSS starts **/
+p{
+	font-size: 40px;
+	margin: -70px 80px;
+	font-weight: bolder;
+}	
+/** p tag CSS end **/
+
+/** quote CSS starts **/
+.quote{
+	position:absolute;
+	font-family: "Copperplate Gothic Light";
+	color: #000; /* Fallback for older browsers */
+	color: rgba(45, 9, 179, 0.8);
+	text-align:left;
+	margin-top:165px;
+	font-size:30px;
+	width:35%;
+	margin-left:60px;
+}
+
+.colon{
+	font-size: 60px;
+}
+
+.firstlet{
+	font-size: 50px;
+}
+/** quote CSS end **/
+
+/** form tag CSS starts **/
+form{
+	margin: 50px 18px 0 600px;
+}
+
+.form-inline {  
+  flex-flow: column wrap;
+  align-items: right;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+.linguistic{
+	font-size: 32px;
+	font-weight: 900;
+	color: #ffffb3;
+	margin-top: -15px;
+}
+
+textarea{
+	height: 150px; 
+	width: 600px;
+	box-sizing: border-box;
+	border: 3px solid black;
+	-webkit-transition: 0.5s;
+	transition: 0.5s; 
+	outline: none;
+	resize: none;
+}
+
+.english{
+	height: 150px; 
+	width: 600px; 
+	box-sizing: border-box;
+	border: 3px solid black;
+	-webkit-transition: 0.5s;
+	transition: 0.5s; 
+	outline: none;
+	resize: none;
+}
+
+.container1{
+	max-width: 1170px;
+	margin: auto;
+}
+
+.fa-microphone {
+	margin-left: 604px;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+#convert1{
+	margin-left: 604px;
+	margin-top: -3.2%;
+}
+
+#write i{
+	position: relative;
+}
+/** form tag CSS end **/
+
+/** footer tag CSS starts **/
+.footer{
+    position: absolute;
+	background-color: black;
+    padding: 70px 0;
+    width: 100%;
+}
+
+.footer-col{
+   width: 30%;
+   padding: 0 15px;
+}
+
+.footer-col h4{
+	font-size: 24px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+	font-size: 19px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	margin: 0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff49;
+}
+/** footer tag CSS ends **/
+
+/** file input code starts **/
+.file {
+	opacity: 0;
+	width: 0.1px;
+	height: 0.1px;
+	position: absolute;
+}
+  
+.file-input label {
+	display: block;
+	position: relative;
+	width: 100px;
+	height: 35px;
+	border-radius: 25px;
+	background: linear-gradient(40deg,#ff6ec4,#7873f5);
+	box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+	transition: transform .2s ease-out;
+}
+  
+.file-name {
+	position: absolute;
+	bottom: -35px;
+	left: 10px;
+	font-size: 0.85rem;
+	color: #555;
+}
+  
+input:hover + label,
+input:focus + label {
+	transform: scale(1.02);
+}
+  
+/** Adding an outline to the label on focus **/
+input:focus + label {
+	outline: 1px solid #000;
+	outline: -webkit-focus-ring-color auto 2px;
+}
+/** file input code end **/
+
+/** virtual-keyboard CSS starts **/
+.keyboard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background :#004134;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    transition: bottom 0.4s;
+}
+
+.keyboard--hidden {
+    bottom: -100%;
+}
+
+.keyboard__keys {
+    text-align: center;
+}
+
+.keyboard__key {
+    height: 45px;
+    width: 6%;
+    max-width: 90px;
+    margin: 3px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.05rem;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+.keyboard__key:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.keyboard__key--wide {
+    width: 12%;
+}
+
+.keyboard__key--extra-wide {
+    width: 36%;
+    max-width: 500px;
+}
+
+.keyboard__key--activatable::after {
+    content: '';
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.keyboard__key--active::after {
+    background: #08ff00;
+}
+
+.keyboard__key--dark {
+    background: rgba(0, 0, 0, 0.25);
+}
+/** virtual-keyboard CSS end **/
+
+/** responsive page CSS starts **/
+@media(max-width: 574px){
+	.quote{
+		margin-top: 60px;
+		margin-left: 100px;
+		font-size: 20px;
+	}
+
+	.colon{
+		font-size: 30px;
+	}
+
+	.firstlet{
+		font-size: 33px;
+	}
+
+	form{
+		margin: 350px 600px 0 18px;
+	}
+
+	.radio_btns{
+		display: inline-flex;
+	}
+
+	label{
+		display: inline-flex;
+	}
+
+	.hinglish{
+		width: 430px;
+	}
+
+	.use-keyboard-input{
+		width: 430px;
+	}
+
+	.audio_ip{
+		width: 430px;
+	}
+
+	.english{
+		width: 430px;
+	}
+
+	.fa-microphone {
+		margin-left: 95.5%;
+		margin-top: 27%;
+	}
+
+	#convert1{
+		margin-left: 434px;
+	}
+
+	#convert2{
+		margin-left: 434px;
+	}
+
+	.Buttons{
+		display: inline-flex;
+	}
+
+	.footer-col{
+		width: 100%;
+	}
+}
+
+@media(max-width: 600px){
+	.quote{
+		margin-top: 60px;
+		margin-left: 150px;
+		font-size: 25px;
+	}
+
+	.colon{
+		font-size: 35px;
+	}
+
+	.firstlet{
+		font-size: 40px;
+	}
+	
+	form{
+		margin: 350px 500px 0 40px;
+	}
+
+	.radio_btns{
+		display: inline-flex;
+	}
+
+	label{
+		display: inline-flex;
+	}
+
+	.hinglish{
+		width: 500px;
+	}
+
+	.use-keyboard-input{
+		width: 500px;
+	}
+
+	.audio_ip{
+		width: 500px;
+	}
+
+	.english{
+		width: 500px;
+	}
+
+	.fa-microphone {
+		margin-left: 95.5%;
+		margin-top: 23%;
+	}
+
+	#convert1{
+		margin-left: 500px;
+	}
+
+	#convert2{
+		margin-left: 500px;
+	}
+
+	.Buttons{
+		display: inline-flex;
+	}
+}
+
+@media(max-width: 767px){
+	.quote{
+		margin-top: 60px;
+		margin-left: 200px;
+		font-size: 30px;
+	}
+
+	.colon{
+		font-size: 40px;
+	}
+
+	.firstlet{
+		font-size: 38px;
+	}
+
+	form{
+		margin: 390px 500px 0 45px;
+	}
+
+	.radio_btns{
+		display: inline-flex;
+	}
+
+	label{
+		display: inline-flex;
+	}
+
+	.hinglish{
+		width: 520px;
+	}
+
+	.use-keyboard-input{
+		width: 520px;
+	}
+
+	.audio_ip{
+		width: 520px;
+	}
+
+	.english{
+		width: 520px;
+	}
+
+	.fa-microphone {
+		margin-left: 95.5%;
+		margin-top: 23%;
+	}
+
+	#convert1{
+		margin-left: 500px;
+	}
+
+	#convert2{
+		margin-left: 500px;
+	}
+
+	.Buttons{
+		display: inline-flex;
+	}
+
+	.footer-col{
+		width: 50%;
+		margin-bottom: 30px;
+	}
+
+}
+  
+@media(max-width: 992px){
+	form{
+		margin: 390px 500px 0 80px;
+	}
+
+	.radio_btns{
+		display: inline-flex;
+	}
+
+	label{
+		display: inline-flex;
+	}
+
+	.hinglish{
+		width: 580px;
+	}
+
+	.use-keyboard-input{
+		width: 580px;
+	}
+
+	.audio_ip{
+		width: 580px;
+	}
+
+	.english{
+		width: 580px;
+	}
+
+	.fa-microphone {
+		margin-left: 95.5%;
+		margin-top: 20%;
+	}
+
+	#convert1{
+		margin-left: 580px;
+	}
+
+	#convert2{
+		margin-left: 580px;
+	}
+
+	.Buttons{
+		display: inline-flex;
+	}
+}
+
+@media(max-width: 1200px){
+	.quote{
+		margin-top: 60px;
+		margin-left: 350px;
+		font-size: 30px;
+	}
+
+	.colon{
+		font-size: 48px;
+	}
+
+	.firstlet{
+		font-size: 45px;
+	}
+
+	form{
+		margin: 320px 500px 0 80px;
+	}
+
+	.radio_btns{
+		display: inline-flex;
+	}
+
+	label{
+		display: inline-flex;
+	}
+
+	.fa-microphone {
+		margin-left: 95.5%;
+		margin-top: 20%;
+	}
+
+	#convert1{
+		margin-top: 5px;
+		margin-left: 580px;
+	}
+
+	#convert2{
+		margin-left: 580px;
+	}
+
+	.Buttons{
+		display: inline-flex;
+	}
+}
+/** responsive page CSS end **/
